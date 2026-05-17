@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .container {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+input[type="number"] {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+body.dark input[type="number"] {
+  background-color: #3a3a3a;
+  border-color: #555;
+  color: #f0f0f0;
+}
+
+button {
+  padding: 10px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #357abd;
+}
+
+.resultado {
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 6px;
+  min-height: 40px;
+}
+
+.resultado.aprovado {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.resultado.recuperacao {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.resultado.reprovado {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+body.dark .resultado.aprovado {
+  background-color: #1e4d2b;
+  color: #a3d9a5;
+}
+
+body.dark .resultado.recuperacao {
+  background-color: #4d3b00;
+  color: #ffd966;
+}
+
+body.dark .resultado.reprovado {
+  background-color: #4d1a1e;
+  color: #f5a0a5;
+}
+
+.toggle-mode {
+  background-color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.toggle-mode:hover {
+  background-color: #545b62;
+}
