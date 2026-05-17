@@ -1,40 +1,48 @@
 function calcularMedia() {
   const np1 = parseFloat(document.getElementById("np1").value);
   const np2 = parseFloat(document.getElementById("np2").value);
- 
+  const el = document.getElementById("resultado");
+
   if (isNaN(np1) || isNaN(np2)) {
-    document.getElementById("resultado").innerHTML =
-      "Por favor, preencha as notas NP1 e NP2.";
-    document.getElementById("resultado").className = "resultado";
+    el.className = "resultado exame";
+    el.innerHTML = "<span>Por favor, preencha as notas NP1 e NP2.</span>";
     return;
   }
- 
+
   if (np1 < 0 || np1 > 10 || np2 < 0 || np2 > 10) {
-    document.getElementById("resultado").innerHTML =
-      "As notas devem estar entre 0 e 10.";
-    document.getElementById("resultado").className = "resultado";
+    el.className = "resultado exame";
+    el.innerHTML = "<span>As notas devem estar entre 0 e 10.</span>";
     return;
   }
- 
+
   const media = (np1 + np2) / 2;
-  let mensagem = `Sua média é: <strong>${media.toFixed(2)}</strong><br>`;
- 
+
   if (media < 6.60) {
     const notaMinimaExame = 4.75 * 2 - media;
-    mensagem += `Você ficou de exame.<br>`;
-    mensagem += `Para não pegar DP, precisa tirar pelo menos: <strong>${notaMinimaExame.toFixed(2)}</strong> no exame.<br>`;
+    el.className = "resultado exame";
+
+    let html = `
+      <p class="res-media">Média: <strong>${media.toFixed(2)}</strong></p>
+      <p class="res-status">Você ficou de exame 📋</p>
+    `;
+
     if (notaMinimaExame > 10) {
-      mensagem += `<strong>Infelizmente, não é possível evitar a DP mesmo com nota máxima.</strong>`;
+      html += `<p class="res-dp">Infelizmente, não é possível evitar a DP mesmo com nota máxima.</p>`;
+    } else {
+      html += `<p class="res-exame">Nota mínima no exame: <strong>${notaMinimaExame.toFixed(2)}</strong></p>`;
     }
-    document.getElementById("resultado").className = "resultado exame";
+
+    el.innerHTML = html;
   } else {
-    mensagem += `<strong>Parabéns!</strong> Você passou direto e não precisa fazer exame.`;
-    document.getElementById("resultado").className = "resultado aprovado";
+    el.className = "resultado aprovado";
+    el.innerHTML = `
+      <p class="res-media">Média: <strong>${media.toFixed(2)}</strong></p>
+      <p class="res-status">Parabéns! 🎉</p>
+      <p class="res-info">Você passou direto e não precisa fazer exame.</p>
+    `;
   }
- 
-  document.getElementById("resultado").innerHTML = mensagem;
 }
- 
+
 function alternarModo() {
   document.body.classList.toggle("dark");
 }
