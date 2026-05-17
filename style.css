@@ -149,16 +149,10 @@ button:active { transform: scale(0.98); }
   border: 1px solid #c0dd97;
 }
 
-.resultado.recuperacao {
+.resultado.exame {
   background-color: #faeeda;
   color: #854f0b;
   border: 1px solid #fac775;
-}
-
-.resultado.reprovado {
-  background-color: #fbeaf0;
-  color: #72243e;
-  border: 1px solid #f4c0d1;
 }
 
 .toggle-mode {
