@@ -132,15 +132,12 @@ button:hover { opacity: 0.92; }
 button:active { transform: scale(0.98); }
 
 .resultado {
-  text-align: center;
+  text-align: left;
   font-size: 15px;
   font-weight: 500;
   padding: 14px 16px;
   border-radius: 12px;
   min-height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .resultado.aprovado {
@@ -153,6 +150,43 @@ button:active { transform: scale(0.98); }
   background-color: #faeeda;
   color: #854f0b;
   border: 1px solid #fac775;
+}
+
+.resultado p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.resultado p + p {
+  margin-top: 6px;
+}
+
+.res-media {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.res-status {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.res-exame {
+  font-size: 15px;
+  margin-top: 8px !important;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.res-info {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.res-dp {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px !important;
 }
 
 .toggle-mode {
